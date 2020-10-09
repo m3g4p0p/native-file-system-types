@@ -59,8 +59,13 @@ interface ChooseFileSystemEntriesOptions {
 	excludeAcceptAllOption?: boolean;
 }
 
+interface ShowOpenFilePickerOptions {
+	multiple?: boolean;
+}
+
 interface Window {
 	chooseFileSystemEntries(options?: ChooseFileSystemEntriesOptions): Promise<FileSystemHandle | FileSystemHandle[]>;
+	showOpenFilePicker(options?: ShowOpenFilePickerOptions): Promise<FileSystemFileHandle[]>;
 }
 
 type SystemDirectoryType = "sandbox";
